@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Voronoi Stippling Word Cloud",
+  "description": "This is a Voronoi stippling word cloud extension for Chrome.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": []
+}

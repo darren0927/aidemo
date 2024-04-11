@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Tab</title>
+  <link rel="stylesheet" type="text/css" href="css/tab.css">
+</head>
+<body>
+  <div id="quote" class="quote">
+    <pre id="text" class="text"></pre>
+  </div>
+
+  <div id="toolbar" class="toolbar">
+    <div id="currency">
+      <div class="rate">
+        <label>汇率:</label>
+        <span id="usdToCnyRate" class="value">Loading...</span>
+      </div>
+    </div>
+
+    <div id="bitcoin">
+      <div class="rate">
+        <label>比特币:</label>
+        <span id="bitcoinPrice" class="value">Loading...</span>
+      </div>
+    </div>
+
+    <div id="gold">
+      <div class="rate">
+        <label>黄金:</label>
+        <span id="goldPrice" class="value">Loading...</span>
+      </div>
+    </div>
+
+    <div id="WTI">
+      <div class="rate">
+        <label>WTI:</label>
+        <span id="WTIPrice" class="value">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main_container">
+    <div id="main_left" class="main_left">
+    </div>
+    <div id="main_right" class="main_right">
+    </div>
+  </div>
+
+  <!-- 词云所需的Scripts -->
+  <script src="bundle.js"></script>
+  <script src="integration/kimi/kimiClient.js"></script>
+  <script src="integration/zhipu/zhipuClient.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html>

@@ -3,9 +3,10 @@ from chain import TDMindChain
 from llm.ZhiPu import CustomLLM
 
 
-def __hello_world__(query:str):
+def __hello_world__(query: str):
     hello_world_chain = TDMindChain.SqlBuildChain(llm=CustomLLM())
-    response = hello_world_chain.run({'question':query})
+    response = hello_world_chain.run({'question': query})
+    print("############## 调用测试工具 __hello_world__")
     return response
 
 

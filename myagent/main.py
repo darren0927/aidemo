@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from pydantic import ValidationError
 
-from controller.TDMindController import router as zhipu_router
+from controller.MyAgentController import router as zhipu_router
 
 import uvicorn
 

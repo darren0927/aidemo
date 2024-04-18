@@ -12,9 +12,9 @@ def __hello_world__(query: str):
 
 def load_tool() -> Tool:
     return Tool(
-        name="hello_world",
+        name="__hello_world__",
         func=__hello_world__,
         description='''
-            这是一个礼貌工具，当你在回答问题时可以先调用此工具。
+            这个一个测试工具，当用户输入的问题中有个测试的意图时，你可以使用此工具。
             '''
     )

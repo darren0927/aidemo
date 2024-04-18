@@ -1,5 +1,5 @@
 # controller/MyAgentController.py
-from fastapi import HTTPException, APIRouter, Request
+from fastapi import HTTPException, APIRouter
 from pydantic import BaseModel
 from agent import MyAgent
 
@@ -18,11 +18,12 @@ class ResponseModel(BaseModel):
 
 class MyAgentController:
 
-    @router.post("/zhipu/daily_quote", response_model=ResponseModel)
+    @router.post("/agent/daily_quote", response_model=ResponseModel)
     async def get_daily_quote(self: RequestModel):
         try:
-            MyAgent.run(self.input)
-            return ResponseModel(result="SUCCESS")
+            ret = MyAgent.run(self.input)
+            print(f"返回值 = {ret}")
+            return ResponseModel(result=ret)
         except Exception as e:
             print("发生异常", e)
             raise HTTPException(status_code=500, detail=str(e))

@@ -1,10 +1,9 @@
-
 from llm import LLMLoader
 from langchain.agents import load_tools, AgentType
 from langchain.agents import AgentExecutor, create_structured_chat_agent, initialize_agent
 from langchain import hub
-
-from tools import TestTool
+from tools import HelloWorldTool
+from tools import DateTimeTool
 
 
 def run_new(query):
@@ -15,7 +14,7 @@ def run_new(query):
 
         # 2、定义agent需要调用的工具
         tools = load_tools(["requests_all", "llm-math"], llm=llm, allow_dangerous_tools=True)
-        tools.append(TestTool.load_tool())
+        tools.append(HelloWorldTool.load_tool())
 
         # 3、定义提示词模板
         prompt = hub.pull("hwchase17/structured-chat-agent")
@@ -43,7 +42,8 @@ def run(query):
 
         # 2、定义agent需要调用的工具
         tools = load_tools(["requests_all", "llm-math"], llm=llm, allow_dangerous_tools=True)
-        tools.append(TestTool.load_tool())
+        tools.append(HelloWorldTool.load_tool())
+        tools.append(DateTimeTool.load_tool())
 
         # 3、初始化agent
         agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)

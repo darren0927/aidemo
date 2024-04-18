@@ -1,5 +1,5 @@
 
-from llm.ZhiPu import CustomLLM
+from llm import LLMLoader
 from langchain.agents import load_tools, AgentType
 from langchain.agents import AgentExecutor, create_structured_chat_agent, initialize_agent
 from langchain import hub
@@ -11,7 +11,7 @@ def run_new(query):
 
     try:
         # 1、定义大模型为自定义大模型（调用智谱LLM的API）
-        llm = CustomLLM()
+        llm = LLMLoader.load_llm()
 
         # 2、定义agent需要调用的工具
         tools = load_tools(["requests_all", "llm-math"], llm=llm, allow_dangerous_tools=True)
@@ -39,7 +39,7 @@ def run(query):
 
     try:
         # 1、定义大模型为自定义大模型（调用智谱LLM的API）
-        llm = CustomLLM()
+        llm = LLMLoader.load_llm()
 
         # 2、定义agent需要调用的工具
         tools = load_tools(["requests_all", "llm-math"], llm=llm, allow_dangerous_tools=True)

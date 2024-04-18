@@ -1,5 +1,5 @@
 from langchain.llms.base import LLM
-from typing import Dict, List, Optional, Tuple, Union, Any, Iterator, Type
+from typing import Dict, List, Optional, Union, Any, Iterator, Type
 
 from langchain_core.callbacks import CallbackManagerForLLMRun
 from langchain_core.language_models import LanguageModelInput
@@ -8,10 +8,10 @@ from langchain_core.runnables import Runnable
 from pydantic import BaseModel
 from zhipuai import ZhipuAI
 
-from config import ZhipuConfig
+from conf.conf import ZhiPuConfig
 
 
-class CustomLLM(LLM):
+class ZhiPuApiLLM(LLM):
 
     max_token: int = 10000
     temperature: float = 0.1
@@ -31,7 +31,7 @@ class CustomLLM(LLM):
         print(prompt)
 
         # 获取LLM相关配置
-        config = ZhipuConfig.from_json()
+        config = ZhiPuConfig.from_json()
 
         # 调用ZhiPuAI的SDK
         client = ZhipuAI(api_key=config.api_key)

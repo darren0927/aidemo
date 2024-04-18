@@ -1,5 +1,5 @@
 {
-  "api_key": "sk-608642c150bc48feb0ee5284440026ce",
+  "api_key": "your qwen api key",
   "daily_quote_prompt": {
     "role": "user",
     "content": "你是通晓古今中外文学大师。请帮助生成30字内的每日随机不重复的警句。"

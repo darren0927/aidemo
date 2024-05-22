@@ -21,9 +21,9 @@ class MyAgentController:
     @router.post("/agent/daily_quote", response_model=ResponseModel)
     async def get_daily_quote(self: RequestModel):
         try:
-            ret = MyAgent.run(self.input)
+            ret = MyAgent.run_new(self.input)
             print(f"返回值 = {ret}")
-            return ResponseModel(result=ret)
+            return ResponseModel(result=str(ret))
         except Exception as e:
             print("发生异常", e)
             raise HTTPException(status_code=500, detail=str(e))

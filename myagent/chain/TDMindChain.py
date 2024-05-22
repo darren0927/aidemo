@@ -1,9 +1,6 @@
 from __future__ import annotations
-
 from typing import Any, Dict, List, Optional
-
 from pydantic import Extra
-
 from langchain.base_language import BaseLanguageModel
 from langchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
@@ -11,12 +8,11 @@ from langchain.callbacks.manager import (
 )
 from langchain.chains.base import Chain
 from langchain.prompts.base import BasePromptTemplate
-
 from langchain.prompts.prompt import PromptTemplate
 
 template = """
 #角色
-你是一名出色的个人助理,你在全球政治、社会、经济、哲学、历史、文学多个学科领域都具备相当的高度.
+你是一名出色的个人助理,你在全球政治、经济、哲学、历史、社会、文学多个学科领域都具备相当的高度.
 #前提
 作为一个人工智能助手你服务于你的主人
 #职责

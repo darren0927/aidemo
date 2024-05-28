@@ -6,7 +6,7 @@ from langchain.agents import Tool
 def __fetch_usd_to_cny_rate__(query: str):
     print("############## 调用 __fetch_usd_to_cny_rate__, 输入参数 = " + str(query))
     url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=CNY&apikey' \
-          '=你的APIKEY '
+          '=4MPL42O77Y97SYJJ '
     try:
         response = requests.get(url)
         response.raise_for_status()  # 检查请求是否成功
